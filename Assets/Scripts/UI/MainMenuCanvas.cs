@@ -10,6 +10,8 @@ namespace Platformer.UI
     {
         [SerializeField] private TMP_InputField inputUsername;
         [SerializeField] private Button btnPlay;
+        [SerializeField] private GameObject againText;
+
 
         private static MainMenuCanvas _instance;
         public static MainMenuCanvas Instance => _instance;
@@ -32,11 +34,21 @@ namespace Platformer.UI
         private void OnUsernameInputChanged(string newName)
         {
             GameDatabase.Instance.SetUsername(newName);
+           
         }
 
         public void BtnPlayClicked()
         {
-            SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
+            if(inputUsername.text!="")
+            {
+                SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
+                Debug.Log(GameDatabase.Instance.CurrentUser.Username);
+            }
+    
+            else
+            {
+                againText.SetActive(true);
+            }
         }
         
         #endregion Event Handlers

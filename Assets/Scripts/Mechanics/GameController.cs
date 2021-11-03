@@ -1,6 +1,7 @@
 using Platformer.Core;
 using Platformer.Model;
 using UnityEngine;
+using TMPro;
 
 namespace Platformer.Mechanics
 {
@@ -12,6 +13,8 @@ namespace Platformer.Mechanics
     {
         public static GameController Instance { get; private set; }
 
+        [SerializeField]
+        private TMP_Text username;
         //This model field is public and can be therefore be modified in the 
         //inspector.
         //The reference actually comes from the InstanceRegister, and is shared
@@ -19,6 +22,18 @@ namespace Platformer.Mechanics
         //shared reference when the scene loads, allowing the model to be
         //conveniently configured inside the inspector.
         public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+
+        private void Awake()
+        {
+            setUsername();
+        }
+
+
+        public void setUsername()
+        {
+            username.text = GameDatabase.Instance.CurrentUser.Username;
+        }
+
 
         void OnEnable()
         {
