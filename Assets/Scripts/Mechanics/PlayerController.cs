@@ -18,6 +18,9 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
+        public Joystick joystick;
+        public bool buttonPressed = false;
+
         /// <summary>
         /// Max horizontal speed of the player.
         /// </summary>
@@ -55,10 +58,12 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
-                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
+                move.x = joystick.Horizontal;
+              //  move.x = Input.GetAxisRaw("Horizontal");
+              //ovi   float verticalMove = joystick.Vertical; 
+                if (jumpState == JumpState.Grounded && buttonPressed)
                     jumpState = JumpState.PrepareToJump;
-                else if (Input.GetButtonUp("Jump"))
+                else if (!buttonPressed)
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
