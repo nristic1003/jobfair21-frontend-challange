@@ -43,6 +43,7 @@ namespace Platformer.UI
                 lblTitle.text = "LEVEL LOST";
                 titleWonColor = new Color(1,0,0);
                 lblTitle.color = titleWonColor;
+                GameObject.Find("BtnNextLevel").SetActive(false);
             }
               
         }
@@ -56,7 +57,12 @@ namespace Platformer.UI
 
         public void BtnReplayClicked()
         {
-            SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void BtnNextLevelClicked()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         #endregion Event Handlers

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Platformer.Gameplay;
 using UnityEngine;
@@ -51,5 +52,9 @@ namespace Platformer.Mechanics
             }
         }
 
+        public static implicit operator EnemyController(EnemySaw v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

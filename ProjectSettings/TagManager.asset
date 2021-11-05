@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FarBackground
+    uniqueID: 963041235
+    locked: 0
+  - name: Background
+    uniqueID: 1022737845
+    locked: 0
+  - name: Level
+    uniqueID: 1256116905
+    locked: 0

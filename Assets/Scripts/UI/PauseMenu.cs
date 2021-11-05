@@ -35,7 +35,7 @@ namespace Platformer.UI
 
         public void BtnRestartClicked()
         {
-            SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         #endregion Event Handlers
