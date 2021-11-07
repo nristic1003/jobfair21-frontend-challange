@@ -2,7 +2,6 @@ using Platformer.Core;
 using Platformer.Model;
 using UnityEngine;
 using TMPro;
-
 namespace Platformer.Mechanics
 {
     /// <summary>
@@ -40,7 +39,6 @@ namespace Platformer.Mechanics
             Instance = this;
         }
 
-    
 
         void OnDisable()
         {

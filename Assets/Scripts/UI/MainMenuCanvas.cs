@@ -22,6 +22,7 @@ namespace Platformer.UI
 
             inputUsername.onValueChanged.AddListener(OnUsernameInputChanged);
             inputUsername.text = GameDatabase.Instance.CurrentUser.Username;
+            btnPlay.interactable = false;
         }
 
         private void OnDestroy()
@@ -33,7 +34,14 @@ namespace Platformer.UI
 
         private void OnUsernameInputChanged(string newName)
         {
-            GameDatabase.Instance.SetUsername(newName);
+            if(newName =="")
+                btnPlay.interactable = false;
+            else
+            {
+                btnPlay.interactable = true;
+                GameDatabase.Instance.SetUsername(newName);
+            }
+           
            
         }
 
@@ -43,6 +51,7 @@ namespace Platformer.UI
             {
                 SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
                 Debug.Log(GameDatabase.Instance.CurrentUser.Username);
+                
             }
     
             else
