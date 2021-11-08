@@ -9,7 +9,7 @@ public class RunBoss : StateMachineBehaviour
     Rigidbody2D rb;
     Boss bossScript;
     public float speed = 0.00005f;
-    public int attackRange = 2;
+    public int attackRange = 1;
 
   //  OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

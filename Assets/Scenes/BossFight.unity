@@ -3193,7 +3193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9399c4aeebbf5a47995ebbafd701fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 30
+  attackDamage: 50
   attackOffset: {x: 0, y: 0.28, z: 0}
   attackRange: 1.5
   attackMask:
@@ -3245,7 +3245,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.56}
+  m_Offset: {x: 0, y: 0.53}
   serializedVersion: 2
   m_Radius: 0.4
 --- !u!4 &763475491 stripped
@@ -3343,6 +3343,40 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &808544134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1216293393019812, guid: 6877fb649746c674d8fbbcf60d41892b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1706558880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &808544137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808544134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eeee71469c3c174e88374c24d97e478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &808544138
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808544134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007764617, y: 0.43}
+  m_Size: {x: 0.5731508, y: 0.14}
+  m_Direction: 1
 --- !u!1001 &838423047
 PrefabInstance:
   m_ObjectHideFlags: 0

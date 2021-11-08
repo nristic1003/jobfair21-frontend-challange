@@ -53,7 +53,7 @@ public class BossHealth : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+/*    private void OnCollisionEnter2D(Collision2D collision)
     {
 		Debug.Log("da");
         if (collision.gameObject.tag == "Player")
@@ -62,7 +62,7 @@ public class BossHealth : MonoBehaviour
             //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(40f * Vector2.up, ForceMode2D.Impulse);
 
         }
-    }
+    }*/
 
 
 
