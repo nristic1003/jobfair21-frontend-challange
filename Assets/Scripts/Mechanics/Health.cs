@@ -70,7 +70,7 @@ namespace Platformer.Mechanics
         {
             SpriteRenderer[] srs = GetComponentsInChildren<SpriteRenderer>();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
                 foreach (SpriteRenderer sr in srs)
                 {

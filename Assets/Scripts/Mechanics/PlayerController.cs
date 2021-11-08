@@ -62,7 +62,7 @@ namespace Platformer.Mechanics
                 //----------------------------------------------------------------
                 // Uncomment this part of the code for Joystick movement for mobile devices
 
-                 move.x = joystick.Horizontal;
+                move.x = joystick.Horizontal;
                 if (jumpState == JumpState.Grounded && buttonPressed)
                     jumpState = JumpState.PrepareToJump;
                 else if (!buttonPressed)
@@ -75,14 +75,14 @@ namespace Platformer.Mechanics
 
                 //----------------------------------------------------------------
                 //Uncomment this part of the code for keyboard controlls
-                /*   move.x = Input.GetAxisRaw("Horizontal");
-                   if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
-                       jumpState = JumpState.PrepareToJump;
-                   else if (Input.GetButtonUp("Jump"))
-                   {
-                       stopJump = true;
-                       Schedule<PlayerStopJump>().player = this;
-                   }*/
+         /*       move.x = Input.GetAxisRaw("Horizontal");
+                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
+                    jumpState = JumpState.PrepareToJump;
+                else if (Input.GetButtonUp("Jump"))
+                {
+                    stopJump = true;
+                    Schedule<PlayerStopJump>().player = this;
+                }*/
                 //-------------------------------------------------------------------
             }
             else

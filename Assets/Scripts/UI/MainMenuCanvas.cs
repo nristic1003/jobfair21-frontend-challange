@@ -11,7 +11,8 @@ namespace Platformer.UI
         [SerializeField] private TMP_InputField inputUsername;
         [SerializeField] private Button btnPlay;
         [SerializeField] private GameObject againText;
-
+        [SerializeField] private GameObject levelSelectPanel;
+        [SerializeField] private Text levelName;
 
         private static MainMenuCanvas _instance;
         public static MainMenuCanvas Instance => _instance;
@@ -22,9 +23,20 @@ namespace Platformer.UI
 
             inputUsername.onValueChanged.AddListener(OnUsernameInputChanged);
             inputUsername.text = GameDatabase.Instance.CurrentUser.Username;
-            btnPlay.interactable = false;
+            if(inputUsername.text=="")
+                btnPlay.interactable = false;
+            else
+                btnPlay.interactable = true;
         }
 
+        public void SelectLevel(string level)
+        {
+            GameDatabase.Instance.setLevelName(level);
+            levelSelectPanel.SetActive(false);
+            levelName.text = GameDatabase.Instance.getLevelName();
+        }
+
+      
         private void OnDestroy()
         {
             inputUsername.onValueChanged.RemoveListener(OnUsernameInputChanged);
@@ -49,8 +61,16 @@ namespace Platformer.UI
         {
             if(inputUsername.text!="")
             {
-                SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
-                Debug.Log(GameDatabase.Instance.CurrentUser.Username);
+                string levelName = GameDatabase.Instance.getLevelName();
+                if(levelName==null)
+                {
+                    SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
+                }else
+                {
+                    SceneManager.LoadScene(levelName);
+                }
+               
+            
                 
             }
     
@@ -59,7 +79,12 @@ namespace Platformer.UI
                 againText.SetActive(true);
             }
         }
-        
+
+        public void BtnLevelSelectClicked()
+        {
+            levelSelectPanel.SetActive(true);
+        }
+
         #endregion Event Handlers
     }
 }

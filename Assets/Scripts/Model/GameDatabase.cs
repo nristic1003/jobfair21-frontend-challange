@@ -7,6 +7,7 @@ namespace Platformer.Model
         public static GameDatabase Instance = new GameDatabase();
         public UserData CurrentUser { get; private set; }
 
+        private string selectedLevelName;
         private GameDatabase()
         {
             CurrentUser = new UserData();
@@ -27,6 +28,16 @@ namespace Platformer.Model
         public void SetUsername(string newName)
         {
             CurrentUser.Username = newName;
+        }
+
+        public string getLevelName()
+        {
+            return selectedLevelName;
+        }
+
+        public void setLevelName(string levelName)
+        {
+            selectedLevelName = levelName;
         }
 
         public void ResetScore()

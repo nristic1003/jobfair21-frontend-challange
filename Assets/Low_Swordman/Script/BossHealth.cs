@@ -53,17 +53,20 @@ public class BossHealth : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-		
-		if (collision.tag == "Player")
-		{
-			TakeDamage(20);
-			Vector2 jump = new Vector2(20, 6);
-			collision.GetComponent<KinematicObject>().Bounce(jump);
-			
-		}
-	}
-    
+		Debug.Log("da");
+        if (collision.gameObject.tag == "Player")
+        {
+            TakeDamage(20);
+            //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(40f * Vector2.up, ForceMode2D.Impulse);
+
+        }
+    }
+
+
+
+
+
 
 }
