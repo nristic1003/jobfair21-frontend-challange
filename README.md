@@ -25,7 +25,7 @@
 ![SAW](https://user-images.githubusercontent.com/61749935/140777596-5e2b8fcf-dad8-4a33-bb89-63ec8dd073fa.png)
 
 ## BOSS FIGHT
- Jump on his head to defeat him :)
+ Jump on his head to defeat him, and try to avoid his sword! :)
  
   ![BOSS](https://user-images.githubusercontent.com/61749935/140778080-d27ed788-6141-49b8-8fe9-fb3be2fd1921.png)
   
